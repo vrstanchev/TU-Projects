@@ -14,7 +14,17 @@ for i in circles2lv[0,:]:
     cv.circle(cimg2lv,(i[0],i[1]),i[2],(0,255,0),2)
     # draw the center of the circle
     cv.circle(cimg2lv,(i[0],i[1]),2,(0,0,255),3)
-cv.imshow('detected circles',cimg2lv)
+    cimgMoneti = cv.cvtColor(imgmoneti,cv.COLOR_GRAY2BGR)
+circlesMonetiHough= cv.HoughCircles(imgmoneti,cv.HOUGH_GRADIENT,1,20,
+                            param1=50,param2=30,minRadius=0,maxRadius=0)
+circlesMoneti = np.uint16(np.around(circlesMonetiHough))
+for i in circlesMoneti[0,:]:
+    # draw the outer circle
+    cv.circle(cimgMoneti,(i[0],i[1]),i[2],(0,255,0),2)
+    # draw the center of the circle
+    cv.circle(cimgMoneti,(i[0],i[1]),2,(0,0,255),3)
+cv.imshow('detected 2lv',cimg2lv)
+cv.imshow('detected Moneti',cimgMoneti)
 cv.waitKey(0)
 cv.destroyAllWindows()
 k=cv.waitKey(0)
