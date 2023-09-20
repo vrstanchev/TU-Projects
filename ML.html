@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+	<script src="scr.js"> </script>
+  <title>ML TM</title>
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+  <li class="nav-item" style="width:25%" >
+    <a href="https://www.tu-plovdiv.bg/"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Tu-sofia-logo.svg/90px-Tu-sofia-logo.svg.png"></a>
+    </li>
+    <li class="nav-item" style="width:25%">
+      <a class="nav-link"  href="https://ict.tu-plovdiv.bg/">Отдел ИКT</a>
+    </li>
+    <li class="nav-item" style="width:25% display:inline">
+      <a class="nav-link"  href="#">Умна камера чрез Tensorflow.js</a>
+    </li>
+    <li class="nav-item" style="float:right">
+     <img src="https://ict.tu-plovdiv.bg/assets/images/logo.png" >
+    </li>
+  </ul>
+</nav>
+<video id="videoCam" class="border border-success" width="320" height="240" autoplay></video></br>
+ <b>Select model</b>
+ <select id="model_opt">
+ <option value="MobileNet">Image - MobileNet</option>
+ <option value="SpeechCommands18w">Sound - SpeechCommands18w</option>
+ </select></br></br>
+<button id="start-camera" class="btn btn-danger" onclick="openCam()">Start Camera</button>
+<button id="train" class="btn btn-info" onclick="trainModel()">Train  Camera</button>
+<p id="paragraph" class="text-info"></p>
+  </body>
+</html>
